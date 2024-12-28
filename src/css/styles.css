@@ -19,7 +19,7 @@
 
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -28,20 +28,22 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  text-align: center;
 }
 
 .gallery {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 10px;
+  display: flex;
+    flex-wrap: wrap;
+    gap: 24px; 
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .gallery-item {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  overflow: hidden;
+  flex: calc(33.333% - 24px); 
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-link {
@@ -65,9 +67,58 @@ body {
   margin-bottom: 20px;
   text-decoration: none;
   color: #007bff;
-  font-weight: bold;
+  
+  
 }
 
 .back-link:hover {
   text-decoration: underline;
+}
+
+.feedback-form {
+  width: 300px;
+  margin: 0 auto;
+}
+main:has(.back-link) {
+  text-align: left;
+}
+
+.feedback-form label {
+  display: block;
+  margin-bottom: 10px;
+  margin-top: 24px;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 8px;
+}
+
+.feedback-form button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.feedback-form button[type="submit"] {
+  background-color: #4E75FF;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
+
+font-weight: 500;
+line-height: 150%;
+letter-spacing: 0.04em;
+color: #fff;
+padding: 8px 16px;
+width: 95px;
+height: 40px;
+  
+}
+
+.feedback-form button[type="submit"]:hover {
+  background-color:  #6c8cff;
+
 }
